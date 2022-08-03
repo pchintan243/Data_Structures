@@ -1,0 +1,33 @@
+expression    priority
+()            3
+* /           2
++ -           1
+
+Ex:  x-y/z-k*d
+
+If operand is there write in stack value
+in this example first x is come so write x
+after that - is come
+so put - into stack
+after y is come write it after x.... so answer is xy
+Then / is come
+
+If in stack operator is already there then check priority first
+Which operator we want to push into the stack is higher prority compare to which is already in stack so we push the operator into the stack
+If it is lower then first pop the operator then push the operator which you want to push previous
+If priority is same then also you can pop the operator from stack
+Note: we cannot push the operator which is less priority compare to which is already in stack
+
+step of example
+
+expression      stack       postfix
+x               empty       x
+-               -           xy
+y               -           xy 
+/               -, /        xy
+z               -, /        xyz
+-               -           xyz/-
+k               -           xyz/-k
+*               -, *        xyz/-k
+d               -, *        xyz/-kd
+                            xyz/-kd*-

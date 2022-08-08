@@ -74,27 +74,26 @@ int peek(struct stack *ptr, int i)
     }
 }
 
-char stacktop(struct stack * ptr)
+char stacktop(struct stack *ptr)
 {
     return ptr->arr[ptr->top];
 }
 
 int match(int a, int b)
 {
-    if(a == '{' && b == '}')
+    if (a == '{' && b == '}')
     {
         return 1;
     }
-    if(a == '[' && b == ']')
+    if (a == '[' && b == ']')
     {
         return 1;
     }
-    if(a == '(' && b == ')')
+    if (a == '(' && b == ')')
     {
         return 1;
     }
     return 0;
-    
 }
 
 int parenthesisMatch(char *exp)
@@ -118,7 +117,7 @@ int parenthesisMatch(char *exp)
                 return 0;
             }
             popped_ch = pop(ptr);
-            if(!match(popped_ch, exp[i]))
+            if (!match(popped_ch, exp[i]))
             {
                 return 0;
             }

@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+
 void displayArray(int *arr, int n)
 {
     for (int i = 0; i < n; i++)
@@ -8,6 +9,7 @@ void displayArray(int *arr, int n)
     }
     cout << endl;
 }
+
 void bubbleSort(int *arr, int n)
 {
     int temp;

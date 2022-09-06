@@ -46,7 +46,7 @@ void quickSort(int *arr, int low, int high)
     if (low < high)
     {
         partitionIndex = parition(arr, low, high);
-        // displayArray(arr, high + 1);                     // display the array after each partition
+        // displayArray(arr, high + 1);           // display the array after each partition
         quickSort(arr, low, partitionIndex - 1);  // Sort left sub array
         quickSort(arr, partitionIndex + 1, high); // Sort right sub array
     }

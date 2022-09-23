@@ -10,45 +10,47 @@ void displayArray(int *arr, int n)
     cout << endl;
 }
 
-int parition(int *arr, int low, int high)
+int parition(int *a, int low, int high)
 {
     int temp;
-    int pivot = arr[low];
+    int pivot = a[low];
     int i = low + 1;
     int j = high;
+    // 5 4 2 7 8 1 9
     do
     {
-        while (arr[i] <= pivot)
+        while (a[i] <= pivot)
         {
             i++;
         }
-        while (arr[j] > pivot)
+        while (a[j] > pivot)
         {
             j--;
         }
         if (i < j)
         {
-            temp = arr[j];
-            arr[j] = arr[i];
-            arr[i] = temp;
+            temp = a[j];
+            a[j] = a[i];
+            a[i] = temp;
         }
     } while (i < j);
-    temp = arr[low];
-    arr[low] = arr[j];
-    arr[j] = temp;
+
+    temp = a[low];
+    a[low] = a[j];
+    a[j] = temp;
     return j;
 }
 
-void quickSort(int *arr, int low, int high)
+void quickSort(int *a, int low, int high)
 {
     int partitionIndex;
 
     if (low < high)
     {
-        partitionIndex = parition(arr, low, high);
-        // displayArray(arr, high + 1);           // display the array after each partition
-        quickSort(arr, low, partitionIndex - 1);  // Sort left sub array
-        quickSort(arr, partitionIndex + 1, high); // Sort right sub array
+        partitionIndex = parition(a, low, high);
+        // displayArray(aa, high + 1);           // display the array after each partition
+        quickSort(a, low, partitionIndex - 1);  // Sort left sub array
+        quickSort(a, partitionIndex + 1, high); // Sort right sub array
     }
 }
 

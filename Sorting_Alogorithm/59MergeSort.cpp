@@ -31,18 +31,21 @@ void mergeSort(int a[], int low, int mid, int high)
         }
         k++;
     }
+
     while (i <= mid)
     {
         b[k] = a[i];
         k++;
         i++;
     }
+
     while (j <= high)
     {
         b[k] = a[j];
         k++;
         j++;
     }
+
     for (int i = low; i <= high; i++)
     {
         a[i] = b[i];

@@ -10,8 +10,9 @@ void displayArray(int *arr, int n)
     cout << endl;
 }
 
-void mergeSort(int a[], int low, int mid, int high)
+void mergeSort(int *a, int low, int mid, int high)
 {
+
     int b[high + 1];
     int i = low;
     int j = mid + 1;
@@ -38,7 +39,6 @@ void mergeSort(int a[], int low, int mid, int high)
         k++;
         i++;
     }
-
     while (j <= high)
     {
         b[k] = a[j];
@@ -54,13 +54,23 @@ void mergeSort(int a[], int low, int mid, int high)
 
 void partitioning(int a[], int low, int high)
 {
-    // 14 6 2 3 5
+    //                               4 6 2 3 5 7
+    //                      4 6 2                  3 5 7
+    //                 4         6 2             3       5 7
+    //           4           6          2      3      5       7
+
     int mid;
     if (low < high)
     {
+        // 4 6 2 5 3 7
         mid = (low + high) / 2;
         partitioning(a, low, mid);
+        // low0 mid2 high5
+        // low0 mid1 high2
+        // low0 mid0 high1
         partitioning(a, mid + 1, high);
+        // low3 mid4 high5
+        // low3 mid3 high4
         mergeSort(a, low, mid, high);
     }
 }

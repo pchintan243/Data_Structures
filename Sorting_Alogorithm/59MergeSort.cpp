@@ -12,7 +12,6 @@ void displayArray(int *arr, int n)
 
 void mergeSort(int *a, int low, int mid, int high)
 {
-
     int b[high + 1];
     int i = low;
     int j = mid + 1;
@@ -25,6 +24,7 @@ void mergeSort(int *a, int low, int mid, int high)
             b[k] = a[i];
             i++;
         }
+        
         else
         {
             b[k] = a[j];
@@ -39,6 +39,7 @@ void mergeSort(int *a, int low, int mid, int high)
         k++;
         i++;
     }
+
     while (j <= high)
     {
         b[k] = a[j];

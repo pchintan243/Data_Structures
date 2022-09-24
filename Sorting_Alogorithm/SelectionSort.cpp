@@ -23,9 +23,12 @@ void selectionSort(int *arr, int n)
                 indexOfMin = j;
             }
         }
-        int temp = arr[i];
-        arr[i] = arr[indexOfMin];
-        arr[indexOfMin] = temp;
+        if (indexOfMin != i)
+        {
+            int temp = arr[i];
+            arr[i] = arr[indexOfMin];
+            arr[indexOfMin] = temp;
+        }
     }
 }
 

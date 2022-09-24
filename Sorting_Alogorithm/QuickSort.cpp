@@ -17,6 +17,9 @@ int parition(int *a, int low, int high)
     int i = low + 1;
     int j = high;
     // 5 4 2 7 8 1 9
+    // pivot5 i3 j5  5 4 2 1 8 7 9
+    // pivot5 i4 j3  1 4 2 5 8 7 9
+
     do
     {
         while (a[i] <= pivot)
@@ -38,7 +41,7 @@ int parition(int *a, int low, int high)
     temp = a[low];
     a[low] = a[j];
     a[j] = temp;
-    return j;
+    return j; // 3
 }
 
 void quickSort(int *a, int low, int high)
@@ -48,7 +51,7 @@ void quickSort(int *a, int low, int high)
     if (low < high)
     {
         partitionIndex = parition(a, low, high);
-        // displayArray(aa, high + 1);           // display the array after each partition
+        // displayArray(a, high + 1);           // display the array after each partition
         quickSort(a, low, partitionIndex - 1);  // Sort left sub array
         quickSort(a, partitionIndex + 1, high); // Sort right sub array
     }

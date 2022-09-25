@@ -53,7 +53,7 @@ void mergeSort(int *a, int low, int mid, int high)
     }
 }
 
-void partitioning(int a[], int low, int high)
+void partitioning(int *a, int low, int high)
 {
     //                               4 6 2 3 5 7
     //                      4 6 2                  3 5 7

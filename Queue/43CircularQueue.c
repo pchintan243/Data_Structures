@@ -59,8 +59,8 @@ int dequeue(struct CircularQueue *q)
     {
         q->f = (q->f + 1) % (q->size);
         a = q->arr[q->f];
-        return a;
     }
+    return a;
 }
 int main()
 {

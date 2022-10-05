@@ -58,8 +58,8 @@ int dequeue(struct queue *q)
     {
         q->f++;
         a = q->arr[q->f];
-        return a;
     }
+    return a;
 }
 int main()
 {

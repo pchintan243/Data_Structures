@@ -18,7 +18,8 @@ void DFS(int i)
 
     for (int j = 0; j < 7; j++)
     {
-        if (a[i][j] == 1 && !visited[j]) {
+        if (a[i][j] == 1 && !visited[j])
+        {
             DFS(j);
         }
     }

@@ -1,4 +1,4 @@
 *.exe
 check.c
 check.cpp
-.vscode/
+.vscode

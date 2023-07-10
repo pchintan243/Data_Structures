@@ -14,6 +14,7 @@ void bubbleSort(int *arr, int n)
     {
         for (int j = 0; j < n - i - 1; j++)
         {
+            flag = true;
             if (arr[j + 1] < arr[j])
             {
                 int temp = arr[j + 1];

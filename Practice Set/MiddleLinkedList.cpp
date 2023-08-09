@@ -36,15 +36,10 @@ struct node *find(struct node *head)
 
 int main()
 {
-    struct node *head;
-    struct node *second;
-    struct node *third;
-    struct node *third1;
-
-    head = (struct node *)malloc(sizeof(struct node));
-    second = (struct node *)malloc(sizeof(struct node));
-    third = (struct node *)malloc(sizeof(struct node));
-    third1 = (struct node *)malloc(sizeof(struct node));
+    struct node *head = (struct node *)malloc(sizeof(struct node));
+    struct node *second = (struct node *)malloc(sizeof(struct node));
+    struct node *third = (struct node *)malloc(sizeof(struct node));
+    struct node *third1 = (struct node *)malloc(sizeof(struct node));
 
     head->data = 90;
     head->next = second;

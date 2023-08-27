@@ -3,7 +3,8 @@ using namespace std;
 
 int main()
 {
-    string s = "7uuyf  uy";
+    string s;
+    cin >> s;
     int a[256] = {0};
     for (int i = 0; i < s.length(); i++)
     {

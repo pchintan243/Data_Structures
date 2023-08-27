@@ -1,56 +1,33 @@
-#include <iostream>
+#include<bits/stdc++.h>
+
 using namespace std;
 
-void displayArray(int *arr, int n)
+int duplicates(int arr[], int n)
 {
-    for (int i = 0; i < n; i++)
-    {
-        cout << arr[i] << " ";
-    }
-    cout << endl;
+    if (n==0 || n==1)
+      return n;
+
+    int j = 0;
+
+    for (int i=0; i < n-1; i++)
+        if (arr[i] != arr[i+1])
+           arr[j++] = arr[i];
+
+    arr[j++] = arr[n-1];
+
+    return j;
 }
 
-void bubbleSort(int *arr, int n)
-{
-    int temp;
-    bool isSorted = false;
-    for (int i = 0; i < n - 1; i++)
-    {
-        isSorted = true;
-        for (int j = 0; j < n - 1 - i; j++)
-        {
-            if (arr[j] > arr[j + 1])
-            {
-                temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-                isSorted = false;
-            }
-        }
-        if (isSorted)
-        {
-            break;
-        }
-    }
-}
-
+// Driver code
 int main()
 {
-    int length;
-    cout << "Enter the size of an array:" << endl;
-    cin >> length;
-    int arr[length];
-    cout << "Enter the element one by one:" << endl;
+   int arr[] = {10, 20, 20, 30, 40, 40, 40, 50, 50};
+   int n = sizeof(arr) / sizeof(arr[0]);
 
-    for (int i = 0; i < length; i++)
-    {
-        cin >> arr[i];
-    }
+   n = duplicates(arr, n);
 
-    bubbleSort(arr, length);
+   for (int i=0; i<n; i++)
+    cout << arr[i] << " ";
 
-    cout << "After sorting: " << endl;
-    displayArray(arr, length);
-
-    return 0;
+   return 0;
 }

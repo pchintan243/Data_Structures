@@ -2,3 +2,5 @@
 check.c
 check.cpp
 .vscode
+input.txt
+output.txt
